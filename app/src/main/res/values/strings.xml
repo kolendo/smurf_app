@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Smurf</string>
 
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="all_ok">OK</string>
+    <string name="all_close_app">Close application</string>
+
+    <string name="splash_location_required">Application requires Location Permission to work properly.</string>
 </resources>

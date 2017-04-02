@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="android.smurf">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:name=".SmurfApplication"
         android:allowBackup="true"
@@ -10,10 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/SmurfTheme">
+
         <activity
             android:name=".views.activities.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:theme="@style/SmurfTheme.Splash"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".views.activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SmurfTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
     </application>
 
 </manifest>
