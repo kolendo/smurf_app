@@ -5,4 +5,6 @@
     <string name="all_close_app">Close application</string>
 
     <string name="splash_location_required">Application requires Location Permission to work properly.</string>
+
+    <string name="main_no_ski_slopes">No ski slopes found.</string>
 </resources>
