@@ -26,8 +26,7 @@
             android:layout_height="match_parent"
             android:background="?attr/selectableItemBackground"
             android:visibility="gone"
-            tools:visibility="visible"
-            >
+            tools:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -40,8 +39,11 @@
                 android:text="@string/main_no_ski_slopes"
                 android:textColor="@color/secondary_text_light"
                 android:textSize="22sp" />
+
         </FrameLayout>
+
     </FrameLayout>
+
 </android.support.v4.widget.SwipeRefreshLayout>
 
 

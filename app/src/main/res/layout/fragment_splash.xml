@@ -9,7 +9,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
-		android:src="@drawable/all_terrain_white_160dp"
+		android:src="@drawable/ic_terrain_white_160dp"
 		tools:ignore="ContentDescription" />
 
 </FrameLayout>

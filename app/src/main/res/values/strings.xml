@@ -7,4 +7,5 @@
     <string name="splash_location_required">Application requires Location Permission to work properly.</string>
 
     <string name="main_no_ski_slopes">No ski slopes found.</string>
+    <string name="main_temperature_format">%.2f °C</string>
 </resources>

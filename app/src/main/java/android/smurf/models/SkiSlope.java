@@ -10,9 +10,9 @@ public class SkiSlope implements Serializable {
 
     private long id;
 
-    private String title;
+    private String name;
 
-    private String content;
+    private String description;
 
     private float latitude;
 
@@ -37,20 +37,20 @@ public class SkiSlope implements Serializable {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getContent() {
-        return content;
+    public String getDescription() {
+        return description;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public float getLatitude() {
