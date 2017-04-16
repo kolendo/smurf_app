@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * @author Wojtek Kolendo
  */
@@ -24,7 +26,6 @@ public class SkiSlopesAdapter extends RecyclerView.Adapter<SkiSlopesAdapter.View
         this.listener = listener;
     }
 
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_ski_slope, parent, false);
@@ -33,6 +34,7 @@ public class SkiSlopesAdapter extends RecyclerView.Adapter<SkiSlopesAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        checkListInitialized();
 
         final SkiSlope item = items.get(position);
 
@@ -54,11 +56,16 @@ public class SkiSlopesAdapter extends RecyclerView.Adapter<SkiSlopesAdapter.View
 
     @Override
     public int getItemCount() {
+        checkListInitialized();
         return items == null ? 0 : items.size();
     }
 
+    public void setItems(List<SkiSlope> items) {
+        checkListInitialized();
+        this.items.addAll(items);
+    }
 
-    public void setItemsList(SortedList<SkiSlope> itemsList) {
+    public void setItemsSortedList(SortedList<SkiSlope> itemsList) {
         items = itemsList;
         notifyDataSetChanged();
     }
@@ -67,6 +74,12 @@ public class SkiSlopesAdapter extends RecyclerView.Adapter<SkiSlopesAdapter.View
         void onItemClicked(SkiSlope item, int position);
     }
 
+    private void checkListInitialized() {
+        if(items == null) {
+            throw new IllegalStateException("Sorted list not initialized! Use method 'initSortedList(SortedList)' before showing " +
+                    "recyclerView.");
+        }
+    }
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
