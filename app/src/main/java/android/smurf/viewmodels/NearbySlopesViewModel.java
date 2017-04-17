@@ -2,7 +2,6 @@ package android.smurf.viewmodels;
 
 import android.smurf.models.SkiSlope;
 import android.smurf.views.NearbySlopesView;
-import android.support.annotation.NonNull;
 import android.support.v7.util.SortedList;
 import android.support.v7.widget.util.SortedListAdapterCallback;
 
@@ -19,15 +18,12 @@ public class NearbySlopesViewModel extends AbstractViewModel<NearbySlopesView> {
     private ArrayList<SkiSlope> skiSlopes = new ArrayList<>();
     private SortedList<SkiSlope> nearbySkiSlopes;
 
-    @Override
-    public void onBindView(@NonNull NearbySlopesView view) {
-        super.onBindView(view);
-    }
-
     public void setupSlopes() {
-        mockSlopes();
-        initSortedList();
-        getView().setSkiSlopesList(skiSlopes);
+        if (getView() != null) {
+            mockSlopes();
+            initSortedList();
+            getView().setSkiSlopesList(skiSlopes);
+        }
     }
 
     private void initSortedList() {
@@ -63,10 +59,21 @@ public class NearbySlopesViewModel extends AbstractViewModel<NearbySlopesView> {
         ArrayList<SkiSlope> skiSlopes = new ArrayList<>();
 
         SkiSlope skiSlope = new SkiSlope();
-        skiSlope.setName("Cerna Hora");
-        skiSlope.setDescription("fknfjkfnkjfbkjfbkjfbkjfbkjf");
-        skiSlope.setTemperature(10);
+        skiSlope.setName("Černá hora");
+        skiSlope.setDescription("Největší lyžařský resort v Česku, kde můžete lyžovat na 41 km sjezdovek a lyžařských cest na 1 skipas.");
+        skiSlope.setTemperature(-10);
+        skiSlopes.add(skiSlope);
 
+        skiSlope = new SkiSlope();
+        skiSlope.setName("Zieleniec");
+        skiSlope.setDescription("Opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis .");
+        skiSlope.setTemperature(5);
+        skiSlopes.add(skiSlope);
+
+        skiSlope = new SkiSlope();
+        skiSlope.setName("Špindlerův mlýn");
+        skiSlope.setDescription("Největší lyžařský resort v Česku, kde můžete lyžovat na 41 km sjezdovek a lyžařských cest na 1 skipas.");
+        skiSlope.setTemperature(666);
         skiSlopes.add(skiSlope);
 
         this.skiSlopes.addAll(skiSlopes);

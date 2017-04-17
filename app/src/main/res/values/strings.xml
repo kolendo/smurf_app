@@ -6,8 +6,12 @@
 
     <string name="splash_location_required">Application requires Location Permission to work properly.</string>
 
+    <string name="main_ski_slopes">Ski Slopes</string>
     <string name="main_nearby">Nearby</string>
     <string name="main_favourites">Favourites</string>
+    <string name="main_settings">Settings</string>
+    <string name="main_logout">Log out</string>
+    <string name="main_login">Log in</string>
     <string name="main_no_ski_slopes">No ski slopes found.</string>
     <string name="main_temperature_format">%.2f °C</string>
 </resources>

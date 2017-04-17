@@ -6,7 +6,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:navigationBarColor">@color/colorPrimary</item>
-        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
     </style>
 
     <style name="SmurfTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
@@ -17,8 +17,22 @@
         <item name="android:statusBarColor">@color/transparent</item>
     </style>
 
+    <style name="SmurfTheme.BottomNavigationBar" parent="SmurfTheme">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
     <style name="SmurfTheme.Splash" parent="SmurfTheme">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
         <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="SmurfTheme.ToolbarButton" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">40dp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="SmurfTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

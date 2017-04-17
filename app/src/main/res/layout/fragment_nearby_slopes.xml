@@ -11,7 +11,6 @@
         android:layout_height="match_parent"
         android:background="@color/grey_200">
 
-
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list_recyclerView"
             android:layout_width="match_parent"
@@ -36,6 +35,7 @@
                 android:drawablePadding="12dp"
                 android:gravity="center"
                 android:padding="24dp"
+                android:drawableTop="@drawable/ic_terrain_grey_160dp"
                 android:text="@string/main_no_ski_slopes"
                 android:textColor="@color/secondary_text_light"
                 android:textSize="22sp" />
