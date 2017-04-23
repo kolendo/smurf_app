@@ -14,4 +14,14 @@
     <string name="main_login">Log in</string>
     <string name="main_no_ski_slopes">No ski slopes found.</string>
     <string name="main_temperature_format">%.2f °C</string>
+
+    <string name="settings_general">General</string>
+    <string name="settings_preference_search_radius">search_radius</string>
+    <string name="settings_search_radius">Search radius</string>
+    <string name="settings_account">Account</string>
+    <string name="settings_preference_username">username</string>
+    <string name="settings_username">User</string>
+    <string name="settings_preference_log_in">log_in</string>
+    <string name="settings_log_in">Log in</string>
+    <string name="settings_log_out">Log out</string>
 </resources>

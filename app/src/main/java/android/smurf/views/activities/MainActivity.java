@@ -4,6 +4,7 @@ package android.smurf.views.activities;
 import android.os.Bundle;
 import android.smurf.R;
 import android.smurf.views.fragments.NearbySlopesFragment;
+import android.smurf.views.fragments.SettingsFragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
@@ -61,7 +62,7 @@ public class MainActivity extends ViewModelBaseEmptyActivity {
                         break;
                     case R.id.action_settings:
                         setTitle(R.string.main_settings);
-                        ft.replace(CONTAINER_FRAME_LAYOUT, NearbySlopesFragment.newInstance());
+                        ft.replace(CONTAINER_FRAME_LAYOUT, SettingsFragment.newInstance());
                         ft.commit();
                         break;
                 }
