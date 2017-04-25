@@ -14,6 +14,7 @@
     <string name="main_login">Log in</string>
     <string name="main_no_ski_slopes">No ski slopes found.</string>
     <string name="main_temperature_format">%.2f °C</string>
+    <string name="main_no_favourites">You don\'t have any \nfavourite ski slopes.</string>
 
     <string name="settings_general">General</string>
     <string name="settings_preference_search_radius">search_radius</string>
@@ -24,4 +25,22 @@
     <string name="settings_preference_log_in">log_in</string>
     <string name="settings_log_in">Log in</string>
     <string name="settings_log_out">Log out</string>
+
+    <string-array name="pref_distance_titles" translatable="false">
+        <item>50 km</item>
+        <item>100 km</item>
+        <item>200 km</item>
+        <item>300 km</item>
+        <item>400 km</item>
+        <item>500 km</item>
+    </string-array>
+
+    <string-array name="pref_distance_values" translatable="false">
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+    </string-array>
 </resources>

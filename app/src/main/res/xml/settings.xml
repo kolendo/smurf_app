@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <PreferenceCategory android:title="@string/settings_account">
+    <PreferenceCategory
+        android:title="@string/settings_account">
 
         <Preference
             android:key="@string/settings_preference_username"
             android:selectable="false"
-            android:title="@string/settings_username"
-            android:summary="Janusz B" />
+            android:summary="Janusz B"
+            android:title="@string/settings_username" />
 
         <Preference
             android:key="@string/settings_preference_log_in"
@@ -18,11 +19,16 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/settings_general">
+    <PreferenceCategory
+        android:title="@string/settings_general">
 
-        <Preference
+        <ListPreference
+            android:defaultValue="300"
+            android:entries="@array/pref_distance_titles"
+            android:entryValues="@array/pref_distance_values"
             android:key="@string/settings_preference_search_radius"
-            android:selectable="true"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
             android:summary="300 km"
             android:title="@string/settings_search_radius" />
 

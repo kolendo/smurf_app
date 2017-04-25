@@ -1,7 +1,7 @@
 package android.smurf.viewmodels;
 
 import android.smurf.models.SkiSlope;
-import android.smurf.views.NearbySlopesView;
+import android.smurf.views.FavouriteSlopesView;
 import android.support.v7.util.SortedList;
 import android.support.v7.widget.util.SortedListAdapterCallback;
 
@@ -13,14 +13,13 @@ import eu.inloop.viewmodel.AbstractViewModel;
  * @author Wojtek Kolendo
  */
 
-public class NearbySlopesViewModel extends AbstractViewModel<NearbySlopesView> {
+public class FavouriteSlopesViewModel extends AbstractViewModel<FavouriteSlopesView> {
 
     private ArrayList<SkiSlope> skiSlopes = new ArrayList<>();
     private SortedList<SkiSlope> nearbySkiSlopes;
 
     public void setupSlopes() {
         if (getView() != null) {
-            mockSlopes();
             initSortedList();
             getView().setSkiSlopesList(skiSlopes);
         }
@@ -53,30 +52,4 @@ public class NearbySlopesViewModel extends AbstractViewModel<NearbySlopesView> {
             getView().openSkiSlopeDetailsActivity(skiSlope);
         }
     }
-
-    // STOPSHIP: 16/04/2017 MOCK !!!!!!!!!!!!!!!!!!!!
-    private void mockSlopes() {
-        ArrayList<SkiSlope> skiSlopes = new ArrayList<>();
-
-        SkiSlope skiSlope = new SkiSlope();
-        skiSlope.setName("Černá hora");
-        skiSlope.setDescription("Největší lyžařský resort v Česku, kde můžete lyžovat na 41 km sjezdovek a lyžařských cest na 1 skipas.");
-        skiSlope.setTemperature(-10);
-        skiSlopes.add(skiSlope);
-
-        skiSlope = new SkiSlope();
-        skiSlope.setName("Zieleniec");
-        skiSlope.setDescription("Zieleniec Ski Arena to jeden z najlepszych ośrodków narciarskich w Polsce, 24 wyciągi, 5 kanap, 22 km tras i śnieg przez 150 dni w roku czekają na narciarzy.");
-        skiSlope.setTemperature(5);
-        skiSlopes.add(skiSlope);
-
-        skiSlope = new SkiSlope();
-        skiSlope.setName("Špindlerův mlýn");
-        skiSlope.setDescription("Největší lyžařský resort v Česku, kde můžete lyžovat na 41 km sjezdovek a lyžařských cest na 1 skipas.");
-        skiSlope.setTemperature(666);
-        skiSlopes.add(skiSlope);
-
-        this.skiSlopes.addAll(skiSlopes);
-    }
-
 }

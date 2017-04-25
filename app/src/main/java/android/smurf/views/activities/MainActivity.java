@@ -3,6 +3,7 @@ package android.smurf.views.activities;
 
 import android.os.Bundle;
 import android.smurf.R;
+import android.smurf.views.fragments.FavouriteSlopesFragment;
 import android.smurf.views.fragments.NearbySlopesFragment;
 import android.smurf.views.fragments.SettingsFragment;
 import android.support.annotation.NonNull;
@@ -57,7 +58,7 @@ public class MainActivity extends ViewModelBaseEmptyActivity {
                         break;
                     case R.id.action_favourites:
                         setTitle(R.string.main_ski_slopes);
-                        ft.replace(CONTAINER_FRAME_LAYOUT, NearbySlopesFragment.newInstance());
+                        ft.replace(CONTAINER_FRAME_LAYOUT, FavouriteSlopesFragment.newInstance());
                         ft.commit();
                         break;
                     case R.id.action_settings:

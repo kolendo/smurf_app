@@ -1,15 +1,10 @@
-<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/contentView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_200"
     tools:context=".views.activities.MainActivity">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/grey_200">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list_recyclerView"
@@ -34,14 +29,12 @@
                 android:alpha=".7"
                 android:gravity="center"
                 android:drawableTop="@drawable/ic_terrain_grey_160dp"
-                android:text="@string/main_no_ski_slopes"
+                android:text="@string/main_no_favourites"
                 android:textColor="@color/secondary_text_light"
                 android:textSize="20sp" />
 
         </FrameLayout>
 
-    </FrameLayout>
-
-</android.support.v4.widget.SwipeRefreshLayout>
+</FrameLayout>
 
 
