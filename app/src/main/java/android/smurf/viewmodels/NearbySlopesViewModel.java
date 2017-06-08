@@ -1,13 +1,20 @@
 package android.smurf.viewmodels;
 
 import android.smurf.models.SkiSlope;
+import android.smurf.repositories.rest.GetNearbySlopesRequest;
 import android.smurf.views.NearbySlopesView;
+import android.support.annotation.NonNull;
 import android.support.v7.util.SortedList;
 import android.support.v7.widget.util.SortedListAdapterCallback;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import eu.inloop.viewmodel.AbstractViewModel;
+import software.rsquared.androidlogger.Logger;
+import software.rsquared.restapi.RestApi;
+import software.rsquared.restapi.exceptions.RequestException;
+import software.rsquared.restapi.listeners.RequestListener;
 
 /**
  * @author Wojtek Kolendo
@@ -20,10 +27,18 @@ public class NearbySlopesViewModel extends AbstractViewModel<NearbySlopesView> {
 
     public void setupSlopes() {
         if (getView() != null) {
-            mockSlopes();
             initSortedList();
-            getView().setSkiSlopesList(skiSlopes);
         }
+    }
+
+    @Override
+    public void onBindView(@NonNull NearbySlopesView view) {
+        super.onBindView(view);
+        downloadSlopes();
+    }
+
+    public void onResume() {
+        downloadSlopes();
     }
 
     private void initSortedList() {
@@ -54,6 +69,27 @@ public class NearbySlopesViewModel extends AbstractViewModel<NearbySlopesView> {
         }
     }
 
+    private void downloadSlopes() {
+        RestApi.execute(new GetNearbySlopesRequest(), new RequestListener<List<SkiSlope>>() {
+            @Override
+            public void onSuccess(List<SkiSlope> result) {
+                if (getView() != null && result != null) {
+                    skiSlopes.addAll(result);
+
+                    getView().setSkiSlopesList(skiSlopes);
+//                    getView().notifyAdapter();
+                    Logger.error(result.size());
+                }
+            }
+
+            @Override
+            public void onFailed(RequestException e) {
+                Logger.error(e);
+            }
+        });
+    }
+
+
     // STOPSHIP: 16/04/2017 MOCK !!!!!!!!!!!!!!!!!!!!
     private void mockSlopes() {
         ArrayList<SkiSlope> skiSlopes = new ArrayList<>();
@@ -78,5 +114,6 @@ public class NearbySlopesViewModel extends AbstractViewModel<NearbySlopesView> {
 
         this.skiSlopes.addAll(skiSlopes);
     }
+
 
 }

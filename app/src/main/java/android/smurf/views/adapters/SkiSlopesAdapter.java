@@ -5,13 +5,19 @@ import android.smurf.SmurfApplication;
 import android.smurf.models.SkiSlope;
 import android.support.v7.util.SortedList;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.List;
+
+import okhttp3.HttpUrl;
 
 /**
  * @author Wojtek Kolendo
@@ -46,12 +52,13 @@ public class SkiSlopesAdapter extends RecyclerView.Adapter<SkiSlopesAdapter.View
                 .getString(R.string.main_temperature_format), item.getTemperature()));
 
         holder.imageImageView.setImageResource(R.drawable.ski_slope);
-//        if (!TextUtils.isEmpty(item.getImageUrl())) {
-//            DisplayImageOptions options = DotHotApplication.getAuthDisplayImageOptionsBuilder()
-//                    .cacheInMemory(true)
-//                    .cacheOnDisk(true).build();
-//            ImageLoader.getInstance().displayImage(item.getImageUrl(), holder.imageImageView, options);
-//        }
+        if (!TextUtils.isEmpty(item.getImage())) {
+//            HttpUrl.Builder builder = UrlUtils.createUrlBuilder(false, "shop", "get-photo", item.getId() + "");
+//            if (builder != null) {
+//                String imageUrl = builder.build().toString();
+//                ImageLoader.getInstance().displayImage(imageUrl, holder.imageImageView);
+//            }
+        }
     }
 
     @Override

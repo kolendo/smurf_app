@@ -29,4 +29,5 @@ public interface NearbySlopesView extends IView {
     void setRecyclerViewRefreshing(boolean enable);
 
     boolean checkPermission();
+
 }

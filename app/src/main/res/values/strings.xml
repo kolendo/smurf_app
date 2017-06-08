@@ -43,4 +43,9 @@
         <item>400</item>
         <item>500</item>
     </string-array>
+
+    <string name="ski_slope_details_sunny">Sunny</string>
+    <string name="ski_slope_details_cloudy">Cloudy</string>
+    <string name="ski_slope_details_snowing">Snowing</string>
+
 </resources>

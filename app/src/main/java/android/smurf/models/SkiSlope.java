@@ -1,27 +1,39 @@
 package android.smurf.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 
 /**
  * @author Wojtek Kolendo
  */
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SkiSlope implements Serializable {
 
+    @JsonProperty("id")
     private long id;
 
+    @JsonProperty("title")
     private String name;
 
+    @JsonProperty("content")
     private String description;
 
+    @JsonProperty("latitude")
     private float latitude;
 
+    @JsonProperty("longitude")
     private float longitude;
 
+    @JsonProperty("country")
     private String country;
 
+    @JsonProperty("image_url")
     private String image;
 
+    @JsonProperty("temperature")
     private float temperature;
 
     private boolean favourite;

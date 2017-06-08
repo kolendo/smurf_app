@@ -31,6 +31,11 @@
             android:theme="@style/SmurfTheme"
             android:label="@string/main_ski_slopes"
             android:windowSoftInputMode="stateAlwaysHidden"/>
-    </application>
+
+    <activity android:name=".views.activities.SkiSlopeDetailsActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/SmurfTheme"
+        android:windowSoftInputMode="stateAlwaysHidden"/>
+</application>
 
 </manifest>

@@ -1,10 +1,12 @@
 package android.smurf.views.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.smurf.R;
 import android.smurf.models.SkiSlope;
 import android.smurf.viewmodels.NearbySlopesViewModel;
 import android.smurf.views.NearbySlopesView;
+import android.smurf.views.activities.SkiSlopeDetailsActivity;
 import android.smurf.views.adapters.SkiSlopesAdapter;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -61,7 +63,7 @@ public class NearbySlopesFragment extends ViewModelBaseFragment<NearbySlopesView
 
     @Override
     public void onItemClicked(SkiSlope item, int position) {
-        // TODO: 16/04/2017
+        getViewModel().onSkiSlopeClicked(item);
     }
 
     /**
@@ -82,7 +84,9 @@ public class NearbySlopesFragment extends ViewModelBaseFragment<NearbySlopesView
 
     @Override
     public void openSkiSlopeDetailsActivity(SkiSlope skiSlope) {
-        // TODO: 16/04/2017
+        Intent intent = new Intent(getContext(), SkiSlopeDetailsActivity.class);
+        intent.putExtra(SkiSlopeDetailsActivity.SKI_SLOPE_EXTRA, skiSlope);
+        startActivity(intent);
     }
 
     @Override
@@ -115,5 +119,11 @@ public class NearbySlopesFragment extends ViewModelBaseFragment<NearbySlopesView
     @Override
     public boolean checkPermission() {
         return false;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getViewModel().onResume();
     }
 }
